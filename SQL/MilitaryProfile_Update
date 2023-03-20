@@ -1,0 +1,85 @@
+USE [Hasty]
+GO
+/****** Object:  StoredProcedure [dbo].[MilitaryProfile_Update]    Script Date: 1/31/2023 2:59:48 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author: <Kacy Lam>
+-- Create date: <01-28-2023>
+-- Description: MilitaryProfile Update
+-- Code Reviewer: 
+-- MODIFIED BY:
+-- MODIFIED DATE:
+-- Code Reviewer:
+-- Note:
+-- =============================================
+
+CREATE proc [dbo].[MilitaryProfile_Update]
+			@UserId int
+			,@MonthlyIncome int
+			,@MoveInDate datetime2
+			,@IsActiveDuty bit
+			,@BranchId int
+			,@RankId int
+			,@HasHousingAllowance bit
+			,@Unit nvarchar(200)
+			,@NoLaterThanDate datetime2
+			,@Id int
+
+/* -------- Test Code --------
+
+	Declare @Id int = 1;
+
+	Declare @UserId int = 3
+			,@MonthlyIncome int = 10000
+			,@MoveInDate datetime2 = null
+			,@IsActiveDuty bit = 1
+			,@BranchId int = 3
+			,@RankId int = 4
+			,@HasHousingAllowance bit = 1
+			,@Unit nvarchar(200) = 'UPDATE'
+			,@NoLaterThanDate datetime2 = null
+
+	Execute	dbo.MilitaryProfile_Update
+						@UserId
+						,@MonthlyIncome
+						,@MoveInDate
+						,@IsActiveDuty
+						,@BranchId
+						,@RankId
+						,@HasHousingAllowance
+						,@Unit
+						,@NoLaterThanDate
+						,@Id
+
+	Select	*
+	From	dbo.MilitaryProfile
+	Where	Id = @Id
+
+*/ -------- Test Code --------
+
+as
+
+BEGIN
+	
+	DECLARE		@dateNow datetime2 = getutcdate()
+
+	UPDATE		[dbo].[MilitaryProfile]
+
+	SET			[UserId] = @UserId
+				,[MonthlyIncome] = @MonthlyIncome
+				,[MoveInDate] = @MoveInDate
+				,[IsActiveDuty] = @IsActiveDuty
+				,[BranchId] = @BranchId
+				,[RankId] = @RankId
+				,[HasHousingAllowance] = @HasHousingAllowance
+				,[Unit] = @Unit
+				,[NoLaterThanDate] = @NoLaterThanDate
+				,[DateModified] = @dateNow
+
+	WHERE		Id = @Id
+
+END
+GO
