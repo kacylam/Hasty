@@ -1,0 +1,19 @@
+import { lazy } from 'react';
+const MilitaryProfiles = lazy(() => import('../components/military/MilitaryProfiles'));
+
+const profilesRoute = [
+  {
+    path: '/profiles/military',
+    name: 'Military Profiles',
+    element: MilitaryProfiles,
+    roles: ['Admin'],
+    exact: true,
+    isAnonymous: false,
+  },
+];
+
+const allRoutes = [
+  ...profilesRoute
+];
+
+export default allRoutes;
