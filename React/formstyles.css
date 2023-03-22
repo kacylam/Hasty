@@ -1,0 +1,69 @@
+.military-profile-primary-color-head {
+    background-color: #5c2563;
+}
+
+.military-profile-font-box {
+    font-family: 'Nunito-Light', sans-serif;
+    src: local(Nunito-Light), url(../../assets/fonts/Nunito-Light.woff) format(woff);
+    font-weight: 600;
+}
+
+.military-profile-btn-color-font {
+    color: white;
+    background-color: #5c2563;
+    border-color: #5c2563;
+    box-shadow: 0 2px 6px 0 rgb(46 26 71 / 50%);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px transparent;
+    padding: 0.45rem 0.9rem;
+    margin-left: 10px;
+    margin-right: 8px;
+    font-size: 0.9rem;
+    border-radius: 0.15rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.military-profile-error-checkbox-wrapper input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+    border-radius: 0.15em;
+    margin-left: 5px !important;
+    border: solid;
+    outline: none;
+    cursor: pointer;
+}
+
+.military-profile-side-by-side {
+    display: flex;
+    flex-direction: row;
+}
+
+.military-profile-error-form {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: red;
+}
+
+.military-card {
+    width: 350px;
+    height: 450px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightgrey;
+}
+
+.military-image {
+    object-fit: cover;
+}
+
+.military-card-information {
+    text-align: left;
+    padding: 15px;
+}
